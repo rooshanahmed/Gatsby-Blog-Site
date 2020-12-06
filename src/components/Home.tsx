@@ -50,7 +50,7 @@ const Home = () => {
       <img src={bg1} alt="gatsby blog" className={classes.img} />
       <div>
         <Typography className={classes.text}>Welcome To Blogs Hub</Typography>
-        <Button className={classes.btn} disableTouchRipple onClick={() => {navigate('/blog')}}>
+        <Button className={classes.btn} disableTouchRipple onClick={() => {navigate('/blogs')}}>
           Go To Blogs
         </Button>
       </div>
