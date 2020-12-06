@@ -1,6 +1,7 @@
 import React from "react"
 import {
   AppBar,
+  Button,
   createStyles,
   makeStyles,
   Theme,
@@ -39,6 +40,8 @@ const Header = ({ title }: NavbarInterface) => {
       <AppBar elevation={0} className={classes.appbar}>
         <Toolbar className={classes.appbarWrapper}>
           <Typography className={classes.title}>{title}</Typography>
+          <Button>Home</Button>
+          <Button>Blogs</Button>
         </Toolbar>
       </AppBar>
     </div>
