@@ -1,6 +1,5 @@
+import React, { ReactNode } from "react"
 import { CssBaseline } from "@material-ui/core"
-import React from "react"
-import { ReactNode } from "react"
 import Header from "../components/Header"
 
 export interface layoutProps {
