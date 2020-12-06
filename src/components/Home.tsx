@@ -22,8 +22,14 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     btn: {
         color: '#fff',
         marginTop: '20px',
-        width: '150px',
-        border: '1px solid '
+        width: '180px',
+        border: '2px solid black',
+        marginLeft: '155px',
+        fontFamily: 'Comfortaa',
+        textTransform: 'capitalize',
+        '&:hover': {
+            backgroundColor: 'black',
+        }
     }
 }));
 
