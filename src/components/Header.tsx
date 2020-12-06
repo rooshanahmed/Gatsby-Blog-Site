@@ -28,10 +28,19 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       fontSize: "32px",
-      color: 'black',
+      color: '#fff',
+      fontFamily: 'Comfortaa',
     },
     btnRoot: {
         marginLeft: 'auto'
+    },
+    btn: {
+      margin: '20px',
+      color: '#fff',
+      fontSize: '16px',
+      fontFamily: 'Comfortaa',
+      width: '130px',
+      textTransform: 'capitalize',
     }
   })
 )
@@ -45,8 +54,8 @@ const Header = ({ title }: NavbarInterface) => {
         <Toolbar className={classes.appbarWrapper}>
           <Typography className={classes.title}>{title}</Typography>
           <div className={classes.btnRoot}>
-            <Button>Home</Button>
-            <Button>Blogs</Button>
+            <Button className={classes.btn}>Home</Button>
+            <Button className={classes.btn}>Blogs</Button>
           </div>
         </Toolbar>
       </AppBar>
