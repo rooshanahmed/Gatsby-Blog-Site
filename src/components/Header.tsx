@@ -56,7 +56,7 @@ const Header = ({ title }: NavbarInterface) => {
           <Typography className={classes.title}>{title}</Typography>
           <div className={classes.btnRoot}>
             <Button className={classes.btn} onClick={() => {navigate('/')}}>Home</Button>
-            <Button className={classes.btn} onClick={() => {navigate('/blog')}}>Blogs</Button>
+            <Button className={classes.btn} onClick={() => {navigate('/blogs')}}>Blogs</Button>
           </div>
         </Toolbar>
       </AppBar>
