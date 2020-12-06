@@ -16,5 +16,14 @@ module.exports = {
         accessToken: `1YXpnRm9KSgFtV0UMCM03chRO9M5DrKUFW7ScPoMf34`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Comfortaa`,
+          `400`,
+        ]
+      }
+    },
   ],
 }
