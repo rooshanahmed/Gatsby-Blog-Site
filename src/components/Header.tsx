@@ -1,34 +1,47 @@
-import React from 'react'
-import { AppBar, createStyles, makeStyles, Theme, Toolbar, Typography } from '@material-ui/core'
+import React from "react"
+import {
+  AppBar,
+  createStyles,
+  makeStyles,
+  Theme,
+  Toolbar,
+  Typography,
+} from "@material-ui/core"
 
 interface NavbarInterface {
-    title: string
+  title: string
 }
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
     root: {
-        display: 'flex',
+      display: "flex",
+      flexGrow: 1,
     },
     appbar: {
-        background: 'none',
+      background: "none",
     },
     appbarWrapper: {
-        width: '80%',
-        margin: '0 auto',
+      width: "80%",
+      margin: "0 auto",
     },
-}));
+    title: {
+      fontSize: "32px",
+    },
+  })
+)
 
 const Header = ({ title }: NavbarInterface) => {
-    const classes = useStyles();
-    
-    return(
-        <div className={classes.root}>
-            <AppBar elevation={0} className={classes.appbar}>
-                <Toolbar className={classes.appbarWrapper}>
-                    <Typography className={classes.title}>{title}</Typography>
-                </Toolbar>
-            </AppBar>
-        </div>
-    )
+  const classes = useStyles()
+
+  return (
+    <div className={classes.root}>
+      <AppBar elevation={0} className={classes.appbar}>
+        <Toolbar className={classes.appbarWrapper}>
+          <Typography className={classes.title}>{title}</Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  )
 }
 export default Header
