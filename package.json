@@ -14,9 +14,15 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/styles": "^4.11.2",
     "gatsby": "^2.26.1",
+    "gatsby-plugin-material-ui": "^2.1.10",
+    "gatsby-source-contentful": "^4.2.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "typescript": "^4.1.2"
   },
   "devDependencies": {
     "prettier": "2.1.2"
