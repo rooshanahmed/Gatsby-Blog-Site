@@ -8,6 +8,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core"
+import { navigate } from "gatsby"
 
 interface NavbarInterface {
   title: string
@@ -28,20 +29,20 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       fontSize: "32px",
-      color: '#fff',
-      fontFamily: 'Comfortaa',
+      color: "#fff",
+      fontFamily: "Comfortaa",
     },
     btnRoot: {
-        marginLeft: 'auto'
+      marginLeft: "auto",
     },
     btn: {
-      margin: '20px',
-      color: '#fff',
-      fontSize: '16px',
-      fontFamily: 'Comfortaa',
-      width: '130px',
-      textTransform: 'capitalize',
-    }
+      margin: "20px",
+      color: "#fff",
+      fontSize: "16px",
+      fontFamily: "Comfortaa",
+      width: "130px",
+      textTransform: "capitalize",
+    },
   })
 )
 
@@ -54,8 +55,8 @@ const Header = ({ title }: NavbarInterface) => {
         <Toolbar className={classes.appbarWrapper}>
           <Typography className={classes.title}>{title}</Typography>
           <div className={classes.btnRoot}>
-            <Button className={classes.btn}>Home</Button>
-            <Button className={classes.btn}>Blogs</Button>
+            <Button className={classes.btn} onClick={() => {navigate('/')}}>Home</Button>
+            <Button className={classes.btn} onClick={() => {navigate('/blog')}}>Blogs</Button>
           </div>
         </Toolbar>
       </AppBar>
