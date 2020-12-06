@@ -1,10 +1,3 @@
-module.exports = {
-  siteMetadata: {
-    title: `Gatsby`,
-    siteUrl: `https://www.gatsbyjs.com`,
-    description: `Blazing fast modern site generator for React`,
-  },
-}
 /**
  * Configure your Gatsby site with this file.
  *
@@ -24,4 +17,9 @@ module.exports = {
       },
     },
   ],
+  siteMetadata: {
+    title: `Gatsby`,
+    siteUrl: `https://www.gatsbyjs.com`,
+    description: `Blazing fast modern site generator for React`,
+  },
 }
