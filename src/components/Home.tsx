@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 import {
   createStyles,
   makeStyles,
   Theme,
   Typography,
   Button,
-} from "@material-ui/core"
-import bg1 from "../../static/bg1.svg"
-import { navigate } from "gatsby"
+} from "@material-ui/core";
+import bg1 from "../../static/bg1.svg";
+import { navigate } from "gatsby";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,22 +39,36 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundColor: "black",
       },
     },
+    container: {
+      marginTop: "100px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
   })
-)
+);
 
 const Home = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <img src={bg1} alt="gatsby blog" className={classes.img} />
-      <div>
-        <Typography className={classes.text}>Welcome To Blogs Hub</Typography>
-        <Button className={classes.btn} disableTouchRipple onClick={() => {navigate('/blogs')}}>
-          Go To Blogs
-        </Button>
+      <div className={classes.container}>
+        <img src={bg1} alt="gatsby blog" className={classes.img} />
+        <div>
+          <Typography className={classes.text}>Welcome To Blogs Hub</Typography>
+          <Button
+            className={classes.btn}
+            disableTouchRipple
+            onClick={() => {
+              navigate("/blogs");
+            }}
+          >
+            Go To Blogs
+          </Button>
+        </div>
       </div>
     </div>
-  )
-}
-export default Home
+  );
+};
+export default Home;
