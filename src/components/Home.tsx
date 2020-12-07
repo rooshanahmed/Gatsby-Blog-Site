@@ -20,11 +20,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     img: {
       width: "450px",
-      marginRight: "150px",
+      marginRight: "290px",
     },
     text: {
       color: "#fff",
-      fontSize: "44px",
+      fontSize: "48px",
       fontFamily: "Comfortaa",
     },
     btn: {
@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: "20px",
       width: "180px",
       border: "2px solid black",
-      marginLeft: "155px",
       fontFamily: "Comfortaa",
       textTransform: "capitalize",
       "&:hover": {
@@ -45,6 +44,11 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       justifyContent: "center",
     },
+    subText: {
+      fontFamily: "Comfortaa",
+      fontSize: "34px",
+      color: "#fff",
+    }
   })
 );
 
@@ -56,7 +60,8 @@ const Home = () => {
       <div className={classes.container}>
         <img src={bg1} alt="gatsby blog" className={classes.img} />
         <div>
-          <Typography className={classes.text}>Welcome To Blogs Hub</Typography>
+          <Typography className={classes.text}>Blogs Hub</Typography>
+          <Typography className={classes.subText}>Learn. Rank. Dominate.</Typography>
           <Button
             className={classes.btn}
             disableTouchRipple
