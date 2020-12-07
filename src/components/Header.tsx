@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       fontSize: "32px",
-      color: "#fff",
+      color: "black",
       fontFamily: "Comfortaa",
     },
     btnRoot: {
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     btn: {
       margin: "20px",
-      color: "#fff",
+      color: "black",
       fontSize: "16px",
       fontFamily: "Comfortaa",
       width: "130px",
