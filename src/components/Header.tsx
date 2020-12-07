@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     appbar: {
-      background: "none",
+      background: "teal",
     },
     appbarWrapper: {
       width: "80%",
@@ -51,12 +51,30 @@ const Header = ({ title }: NavbarInterface) => {
 
   return (
     <div className={classes.root}>
-      <AppBar elevation={0} className={classes.appbar}>
+      <AppBar elevation={5} className={classes.appbar}>
         <Toolbar className={classes.appbarWrapper}>
           <Typography className={classes.title}>{title}</Typography>
           <div className={classes.btnRoot}>
-            <Button className={classes.btn} onClick={() => {navigate('/')}}>Home</Button>
-            <Button className={classes.btn} onClick={() => {navigate('/blogs')}}>Blogs</Button>
+            <Button
+              className={classes.btn}
+              variant="outlined"
+              onClick={() => {
+                navigate("/")
+              }}
+              disableTouchRipple
+            >
+              Home
+            </Button>
+            <Button
+              className={classes.btn}
+              variant="outlined"
+              onClick={() => {
+                navigate("/blogs")
+              }}
+              disableTouchRipple
+            >
+              Blogs
+            </Button>
           </div>
         </Toolbar>
       </AppBar>
