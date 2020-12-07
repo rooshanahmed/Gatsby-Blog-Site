@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Layout from "../layout/Layout"
 import {
   Theme,
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: 1200,
       marginTop: "50px",
       marginLeft: "74px",
+      marginBottom: "20px",
     },
     btn: {
       marginLeft: "20px",
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
       "&:hover": {
         backgroundColor: "black",
         color: "#fff",
-      }
+      },
     },
     text: {
       fontFamily: "Comfortaa",
@@ -43,13 +44,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     subText: {
       fontFamily: "Comfortaa",
-    }
+    },
   })
 )
 
 export const Blogs = (data: any) => {
   const classes = useStyles()
   const blog = data.node
+  const link: string = blog.title;
 
   return (
     <div>
@@ -57,7 +59,7 @@ export const Blogs = (data: any) => {
         <Grid container xs={12}>
           <Grid item xs={12}>
             <Card className={classes.root} elevation={10}>
-              <CardActionArea disableTouchRipple>
+              <CardActionArea disableTouchRipple onClick={() => {navigate(link)}}>
                 <CardMedia
                   component="img"
                   alt="Blog Post"
@@ -66,11 +68,13 @@ export const Blogs = (data: any) => {
                 />
                 <CardContent>
                   <Typography className={classes.text}>{blog.title}</Typography>
-                  <Typography className={classes.subText}>{blog.miniTitle}</Typography>
+                  <Typography className={classes.subText}>
+                    {blog.miniTitle}
+                  </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button className={classes.btn} disableTouchRipple>
+                <Button className={classes.btn} disableTouchRipple onClick={() => {navigate(link)}}>
                   Read Full Blog
                 </Button>
               </CardActions>
