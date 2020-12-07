@@ -1,6 +1,6 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../layout/Layout";
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../layout/Layout"
 import {
   Theme,
   makeStyles,
@@ -11,10 +11,12 @@ import {
   CardMedia,
   CardContent,
   Typography,
-} from "@material-ui/core";
+  CardActions,
+  Button,
+} from "@material-ui/core"
 
 export interface BlogListProps {
-  data: any;
+  data: any
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,12 +26,30 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: "50px",
       marginLeft: "74px",
     },
+    btn: {
+      marginLeft: "20px",
+      border: "2px solid black",
+      width: "200px",
+      textTransform: "capitalize",
+      marginBottom: "10px",
+      "&:hover": {
+        backgroundColor: "black",
+        color: "#fff",
+      }
+    },
+    text: {
+      fontFamily: "Comfortaa",
+      fontSize: "24px",
+    },
+    subText: {
+      fontFamily: "Comfortaa",
+    }
   })
-);
+)
 
 export const Blogs = (data: any) => {
-  const classes = useStyles();
-  const blog = data.node;
+  const classes = useStyles()
+  const blog = data.node
 
   return (
     <div>
@@ -37,39 +57,44 @@ export const Blogs = (data: any) => {
         <Grid container xs={12}>
           <Grid item xs={12}>
             <Card className={classes.root} elevation={10}>
-              <CardActionArea>
+              <CardActionArea disableTouchRipple>
                 <CardMedia
                   component="img"
                   alt="Blog Post"
                   height="400"
-                  image={blog.mediaImages.file}
+                  image={blog.images.file.url}
                 />
                 <CardContent>
-                  <Typography>{blog.title}</Typography>
-                  <Typography>{blog.miniTitle}</Typography>
+                  <Typography className={classes.text}>{blog.title}</Typography>
+                  <Typography className={classes.subText}>{blog.miniTitle}</Typography>
                 </CardContent>
               </CardActionArea>
+              <CardActions>
+                <Button className={classes.btn} disableTouchRipple>
+                  Read Full Blog
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
         </Grid>
       </Grid>
     </div>
-  );
-};
+  )
+}
 
 const BlogList: React.SFC<BlogListProps> = ({ data }) => {
-  const blogs = data.allContentfulBlogPost.edges;
+  const blogs = data.allContentfulBlogPost.edges
 
   return (
     <Layout title="Blogs Hub">
       <h1>Blogs</h1>
       {blogs.map((blog: any) => {
-        return Blogs(blog);
+        return Blogs(blog)
       })}
     </Layout>
-  );
-};
-export default BlogList;
+  )
+}
+export default BlogList
 
 export const query = graphql`
   query {
@@ -78,7 +103,8 @@ export const query = graphql`
         node {
           title
           miniTitle
-          mediaImages {
+          images {
+            title
             file {
               url
             }
@@ -87,4 +113,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
