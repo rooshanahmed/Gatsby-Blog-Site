@@ -20,6 +20,8 @@ export interface BlogListProps {
 const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {
     maxWidth: 1200,
+    marginTop: "50px",
+    marginLeft: "74px",
   },
 }))
 
@@ -38,7 +40,7 @@ export const Blogs = ( data: any ) => {
                   component="img"
                   alt="Blog Post"
                   height="400"
-                  image={blog.mediaImages.file.url}
+                  image={blog.mediaImages.file}
                 />
                 <CardContent>
                   <Typography>{blog.title}</Typography>
