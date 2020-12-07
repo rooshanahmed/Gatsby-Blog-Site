@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#280B0B",
+      backgroundColor: "#34495E",
       minHeight: "100vh",
     },
     img: {
