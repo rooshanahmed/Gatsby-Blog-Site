@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   AppBar,
   Button,
@@ -7,11 +7,12 @@ import {
   Theme,
   Toolbar,
   Typography,
-} from "@material-ui/core"
-import { navigate } from "gatsby"
+} from "@material-ui/core";
+import { navigate } from "gatsby";
+import blog from "../../static/blog.png";
 
 interface NavbarInterface {
-  title: string
+  title: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "32px",
       color: "black",
       fontFamily: "Comfortaa",
+      fontWeight: "bolder",
     },
     btnRoot: {
       marginLeft: "auto",
@@ -43,22 +45,27 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "130px",
       textTransform: "capitalize",
     },
+    image: {
+      width: "50px",
+      height: "50px",
+    },
   })
-)
+);
 
 const Header = ({ title }: NavbarInterface) => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar elevation={5} className={classes.appbar}>
         <Toolbar className={classes.appbarWrapper}>
+          <img src={blog} alt="blog-logo" className={classes.image} />
           <Typography className={classes.title}>{title}</Typography>
           <div className={classes.btnRoot}>
             <Button
               className={classes.btn}
               onClick={() => {
-                navigate("/")
+                navigate("/");
               }}
               disableTouchRipple
             >
@@ -67,7 +74,7 @@ const Header = ({ title }: NavbarInterface) => {
             <Button
               className={classes.btn}
               onClick={() => {
-                navigate("/blogs")
+                navigate("/blogs");
               }}
               disableTouchRipple
             >
@@ -77,6 +84,6 @@ const Header = ({ title }: NavbarInterface) => {
         </Toolbar>
       </AppBar>
     </div>
-  )
-}
-export default Header
+  );
+};
+export default Header;
