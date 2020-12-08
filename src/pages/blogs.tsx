@@ -58,7 +58,7 @@ export const Blogs = (data: any) => {
       <Grid container>
         <Grid container xs={12}>
           <Grid item xs={12}>
-            <Card className={classes.root} elevation={10}>
+            <Card className={classes.root} elevation={15}>
               <CardActionArea disableTouchRipple onClick={() => {navigate(link)}}>
                 <CardMedia
                   component="img"
