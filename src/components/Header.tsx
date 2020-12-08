@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     appbar: {
-      background: "teal",
+      // background: "teal",
+      background: "#01020d",
     },
     appbarWrapper: {
       width: "80%",
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       fontSize: "32px",
-      color: "black",
+      color: "#fff",
       fontFamily: "Comfortaa",
       fontWeight: "bolder",
     },
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     btn: {
       margin: "20px",
-      color: "black",
+      color: "#fff",
       fontSize: "16px",
       fontFamily: "Comfortaa",
       width: "130px",
