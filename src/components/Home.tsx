@@ -32,11 +32,11 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "#fff",
       marginTop: "20px",
       width: "180px",
-      border: "2px solid black",
+      border: "2px solid #424242",
       fontFamily: "Comfortaa",
       textTransform: "capitalize",
       "&:hover": {
-        backgroundColor: "black",
+        backgroundColor: "#424242",
       },
     },
     container: {
