@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "450px",
       marginRight: "290px",
       [theme.breakpoints.down("md")]: {
-        marginTop: "100px",
+        marginTop: "70px",
         marginRight: "10px",
         width: "250px",
       },
