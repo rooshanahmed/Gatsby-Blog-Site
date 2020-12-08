@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: "auto",
       [theme.breakpoints.down("md")]: {
         display: "flex",
-        marginLeft: "80px",
+        marginLeft: "100px",
       },
     },
     btn: {
