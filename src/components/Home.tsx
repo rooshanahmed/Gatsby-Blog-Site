@@ -15,8 +15,9 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#34495E",
+      // backgroundColor: "#34495E",
       minHeight: "100vh",
+      backgroundColor: "#03090E",
     },
     img: {
       width: "450px",
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "Comfortaa",
       fontSize: "34px",
       color: "#fff",
-    }
+    },
   })
 );
 
@@ -61,7 +62,9 @@ const Home = () => {
         <img src={bg1} alt="gatsby blog" className={classes.img} />
         <div>
           <Typography className={classes.text}>Blogs Hub</Typography>
-          <Typography className={classes.subText}>Learn. Rank. Dominate.</Typography>
+          <Typography className={classes.subText}>
+            Learn. Rank. Dominate.
+          </Typography>
           <Button
             className={classes.btn}
             disableTouchRipple
