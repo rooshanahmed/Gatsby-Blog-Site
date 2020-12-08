@@ -57,7 +57,6 @@ const Header = ({ title }: NavbarInterface) => {
           <div className={classes.btnRoot}>
             <Button
               className={classes.btn}
-              variant="outlined"
               onClick={() => {
                 navigate("/")
               }}
@@ -67,7 +66,6 @@ const Header = ({ title }: NavbarInterface) => {
             </Button>
             <Button
               className={classes.btn}
-              variant="outlined"
               onClick={() => {
                 navigate("/blogs")
               }}
