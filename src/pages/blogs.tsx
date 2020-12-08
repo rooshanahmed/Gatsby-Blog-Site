@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       maxWidth: 1200,
       marginTop: "50px",
-      marginLeft: "74px",
+      marginLeft: "170px",
       marginBottom: "20px",
     },
     btn: {
@@ -59,9 +59,9 @@ export const Blogs = (data: any) => {
   return (
     <div className={classes.mainRoot}>
       <Grid container>
-        <Grid container xs={12}>
+        <Grid container xs={10}>
           <Grid item xs={12}>
-            <Card className={classes.root} elevation={15}>
+            <Card className={classes.root} elevation={30}>
               <CardActionArea
                 disableTouchRipple
                 onClick={() => {
