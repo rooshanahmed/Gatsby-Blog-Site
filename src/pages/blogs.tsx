@@ -1,6 +1,6 @@
-import React from "react"
-import { graphql, navigate } from "gatsby"
-import Layout from "../layout/Layout"
+import React from "react";
+import { graphql, navigate } from "gatsby";
+import Layout from "../layout/Layout";
 import {
   Theme,
   makeStyles,
@@ -13,10 +13,10 @@ import {
   Typography,
   CardActions,
   Button,
-} from "@material-ui/core"
+} from "@material-ui/core";
 
 export interface BlogListProps {
-  data: any
+  data: any;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -45,21 +45,29 @@ const useStyles = makeStyles((theme: Theme) =>
     subText: {
       fontFamily: "Comfortaa",
     },
+    mainRoot: {
+      backgroundColor: "black",
+    },
   })
-)
+);
 
 export const Blogs = (data: any) => {
-  const classes = useStyles()
-  const blog = data.node
+  const classes = useStyles();
+  const blog = data.node;
   const link: string = blog.title;
 
   return (
-    <div>
+    <div className={classes.mainRoot}>
       <Grid container>
         <Grid container xs={12}>
           <Grid item xs={12}>
             <Card className={classes.root} elevation={15}>
-              <CardActionArea disableTouchRipple onClick={() => {navigate(link)}}>
+              <CardActionArea
+                disableTouchRipple
+                onClick={() => {
+                  navigate(link);
+                }}
+              >
                 <CardMedia
                   component="img"
                   alt="Blog Post"
@@ -74,7 +82,13 @@ export const Blogs = (data: any) => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button className={classes.btn} disableTouchRipple onClick={() => {navigate(link)}}>
+                <Button
+                  className={classes.btn}
+                  disableTouchRipple
+                  onClick={() => {
+                    navigate(link);
+                  }}
+                >
                   Read Full Blog
                 </Button>
               </CardActions>
@@ -83,22 +97,22 @@ export const Blogs = (data: any) => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
 const BlogList: React.SFC<BlogListProps> = ({ data }) => {
-  const blogs = data.allContentfulBlogPost.edges
+  const blogs = data.allContentfulBlogPost.edges;
 
   return (
     <Layout title="Blogs Hub">
       <h1>Blogs</h1>
       {blogs.map((blog: any) => {
-        return Blogs(blog)
+        return Blogs(blog);
       })}
     </Layout>
-  )
-}
-export default BlogList
+  );
+};
+export default BlogList;
 
 export const query = graphql`
   query {
@@ -117,4 +131,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
