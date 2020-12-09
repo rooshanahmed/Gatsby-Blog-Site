@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "Comfortaa",
     },
     mainRoot: {
-      backgroundColor: "black",
+      backgroundColor: "#D1CECD",
     },
   })
 );
