@@ -23,9 +23,14 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       maxWidth: 1200,
-      marginTop: "50px",
+      marginTop: "120px",
       marginLeft: "120px",
       marginBottom: "20px",
+      [theme.breakpoints.down("md")]: {
+        marginLeft: "10px",
+        marginRight: "10px",
+        marginTop: "120px",
+      },
     },
     btn: {
       marginLeft: "20px",
@@ -47,6 +52,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     mainRoot: {
       backgroundColor: "#D1CECD",
+      display: "flex",
     },
   })
 );
@@ -59,7 +65,7 @@ export const Blogs = (data: any) => {
   return (
     <div className={classes.mainRoot}>
       <Grid container>
-        <Grid container xs={11}>
+        <Grid container xs={12} sm={12} md={11}>
           <Grid item xs={12}>
             <Card className={classes.root} elevation={30}>
               <CardActionArea
@@ -105,7 +111,7 @@ const BlogList: React.SFC<BlogListProps> = ({ data }) => {
 
   return (
     <Layout title="Blogs Hub">
-      <h1>Blogs</h1>
+      {/* <h1>Blogs</h1> */}
       {blogs.map((blog: any) => {
         return Blogs(blog);
       })}
