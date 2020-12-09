@@ -25,6 +25,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         fontSize: '20px',
         marginTop: '20px',
         marginBottom: '20px',
+    },
+    image: {
+        [theme.breakpoints.down("md")]:{
+            width: "240px",
+            height: "150px",
+        }
     }
 }));
 
@@ -39,7 +45,7 @@ const BlogPage: React.SFC<BlogProps> = ({ pageContext }) => {
                     <Typography className={classes.title}>{blog.title}</Typography>
                     <p>{moment(blog.publishedDate, 'YYYY MM DD hh:mm').fromNow()}</p>
                     <Typography>{documentToReactComponents(JSON.parse(blog.body))}</Typography>
-                    <img src={blog.imageUrl} alt={blog.title} />
+                    <img src={blog.imageUrl} alt={blog.title} className={classes.image} />
                     <Typography className={classes.subText}>Author: {blog.author}</Typography>
                 </div>
             </Layout>
