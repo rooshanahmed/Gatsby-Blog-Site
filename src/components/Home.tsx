@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 import {
   createStyles,
   makeStyles,
   Theme,
   Typography,
   Button,
-} from "@material-ui/core"
-import bg1 from "../../static/bg1.svg"
-import { navigate } from "gatsby"
+} from "@material-ui/core";
+import bg1 from "../../static/bg1.svg";
+import { navigate } from "gatsby";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       // backgroundColor: "#34495E",
       minHeight: "100vh",
-      backgroundColor: "#03090E",
+      // backgroundColor: "#03090E",
+      backgroundColor: "#D1CECD",
     },
     img: {
       width: "450px",
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     text: {
-      color: "#fff",
+      color: "black",
       fontSize: "48px",
       fontFamily: "Comfortaa",
       [theme.breakpoints.down("md")]: {
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     btn: {
-      color: "#fff",
+      color: "black",
       marginTop: "20px",
       width: "180px",
       border: "2px solid #424242",
@@ -46,6 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textTransform: "capitalize",
       "&:hover": {
         backgroundColor: "#424242",
+        color: "#fff",
       },
       [theme.breakpoints.down("md")]: {
         marginBotton: "40px",
@@ -64,16 +66,16 @@ const useStyles = makeStyles((theme: Theme) =>
     subText: {
       fontFamily: "Comfortaa",
       fontSize: "34px",
-      color: "#fff",
+      color: "black",
       [theme.breakpoints.down("md")]: {
         fontSize: "24px",
       },
     },
   })
-)
+);
 
 const Home = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -88,7 +90,7 @@ const Home = () => {
             className={classes.btn}
             disableTouchRipple
             onClick={() => {
-              navigate("/blogs")
+              navigate("/blogs");
             }}
           >
             Go To Blogs
@@ -96,6 +98,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-  )
-}
-export default Home
+  );
+};
+export default Home;
