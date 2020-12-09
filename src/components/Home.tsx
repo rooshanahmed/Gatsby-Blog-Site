@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "450px",
       marginRight: "290px",
       [theme.breakpoints.down("md")]: {
-        marginTop: "70px",
+        marginTop: "30px",
         marginRight: "10px",
         width: "250px",
       },
