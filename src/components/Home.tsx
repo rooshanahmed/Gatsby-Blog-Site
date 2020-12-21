@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import bg1 from "../../static/bg1.svg";
 import { navigate } from "gatsby";
+import useWebAnimations, { zoomInDown } from "@wellyshen/use-web-animations";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -76,11 +77,20 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Home = () => {
   const classes = useStyles();
+  const { keyframes: main, timing: mainTime } = zoomInDown;
+  const { ref } = useWebAnimations({
+    keyframes: main,
+    timing: {
+      ...mainTime,
+      delay: 1000,
+      easing: "ease-in",
+    }
+  })
 
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <img src={bg1} alt="gatsby blog" className={classes.img} />
+        <img src={bg1} alt="gatsby blog" className={classes.img} ref={ref} />
         <div>
           <Typography className={classes.text}>Blogs Hub</Typography>
           <Typography className={classes.subText}>
