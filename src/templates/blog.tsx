@@ -1,5 +1,11 @@
 import React from "react"
-import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core"
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+  Typography,
+  Paper,
+} from "@material-ui/core"
 import Layout from "../layout/Layout"
 import moment from "moment"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -33,6 +39,10 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "150px",
       },
     },
+    paper: {
+      marginLeft: "30px",
+      marginRight: "30px",
+    },
   })
 )
 
@@ -44,15 +54,21 @@ const BlogPage: React.SFC<BlogProps> = ({ pageContext }) => {
     <div>
       <Layout title="Blogs Hub">
         <div className={classes.root}>
-          <Typography className={classes.title}>{blog.title}</Typography>
-          <p>{moment(blog.publishedDate, "YYYY MM DD hh:mm").fromNow()}</p>
-          <Typography>
-            {documentToReactComponents(JSON.parse(blog.body))}
-          </Typography>
-          <img src={blog.imageUrl} alt={blog.title} className={classes.image} />
-          <Typography className={classes.subText}>
-            Author: {blog.author}
-          </Typography>
+          <Paper elevation={5} className={classes.paper}>
+            <Typography className={classes.title}>{blog.title}</Typography>
+            <p>{moment(blog.publishedDate, "YYYY MM DD hh:mm").fromNow()}</p>
+            <Typography>
+              {documentToReactComponents(JSON.parse(blog.body))}
+            </Typography>
+            <img
+              src={blog.imageUrl}
+              alt={blog.title}
+              className={classes.image}
+            />
+            <Typography className={classes.subText}>
+              Author: {blog.author}
+            </Typography>
+          </Paper>
         </div>
       </Layout>
     </div>
