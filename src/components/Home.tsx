@@ -1,14 +1,15 @@
-import React from "react";
+import React from "react"
 import {
   createStyles,
   makeStyles,
   Theme,
   Typography,
   Button,
-} from "@material-ui/core";
-import bg1 from "../../static/bg1.svg";
-import { navigate } from "gatsby";
-import useWebAnimations, { zoomInDown } from "@wellyshen/use-web-animations";
+} from "@material-ui/core"
+import bg1 from "../../static/bg1.svg"
+import { navigate } from "gatsby"
+import useWebAnimations, { zoomInDown } from "@wellyshen/use-web-animations"
+import Typist from "react-typist"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -73,18 +74,18 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
   })
-);
+)
 
 const Home = () => {
-  const classes = useStyles();
-  const { keyframes: main, timing: mainTime } = zoomInDown;
+  const classes = useStyles()
+  const { keyframes: main, timing: mainTime } = zoomInDown
   const { ref } = useWebAnimations({
     keyframes: main,
     timing: {
       ...mainTime,
       delay: 1000,
       easing: "ease-in",
-    }
+    },
   })
 
   return (
@@ -93,14 +94,15 @@ const Home = () => {
         <img src={bg1} alt="gatsby blog" className={classes.img} ref={ref} />
         <div>
           <Typography className={classes.text}>Blogs Hub</Typography>
-          <Typography className={classes.subText}>
-            Learn. Rank. Dominate.
-          </Typography>
+          <Typist className={classes.subText} cursor={{ show: false }}>
+            <Typist.Delay ms={1500} />
+            <span>Learn. Rank. Dominate.</span>
+          </Typist>
           <Button
             className={classes.btn}
             disableTouchRipple
             onClick={() => {
-              navigate("/blogs");
+              navigate("/blogs")
             }}
           >
             Go To Blogs
@@ -108,6 +110,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-  );
-};
-export default Home;
+  )
+}
+export default Home
