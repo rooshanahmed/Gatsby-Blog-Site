@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       marginLeft: "30px",
       marginRight: "30px",
+      borderRadius: "20px",
     },
   })
 )
