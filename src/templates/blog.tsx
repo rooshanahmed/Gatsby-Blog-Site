@@ -43,6 +43,8 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: "30px",
       marginRight: "30px",
       borderRadius: "20px",
+      marginBottom: "20px",
+      padding: "15px",
     },
   })
 )
